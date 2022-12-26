@@ -3,7 +3,6 @@ import {productsRepository} from '../repositories/products-repository';
 import {body} from 'express-validator';
 import {inputValidationMiddleware} from '../middlewares/input-validation-middleware';
 
-
 export const productsRoute = Router({})
 
 const titleValidation = body('title').trim().isLength({
@@ -46,4 +45,3 @@ productsRoute.delete('/:id', (req: Request, res: Response) => {
         res.send(404)
     }
 })
-
